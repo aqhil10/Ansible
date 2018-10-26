@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   tasks:
+           - name: get server hostname
+             command: cd /home
+           - name: Install perl
+             yum: name=perl state=installed
+           - name: Install curl
+             yum: name=curl state=installed
+           - name: download cpanel installer
+             command: curl -o latest -L https://securedownloads.cpanel.net/latest
+           - name: download cpanel installer
+             command: sh latest
